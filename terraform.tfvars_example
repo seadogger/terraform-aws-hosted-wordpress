@@ -1,0 +1,8 @@
+access_key="CREATE A NEW AWS USER AND PASTE USER ACCESS KEY"
+secret_key="CREATE A NEW AWS USER AND PASTE USER SECRET KEY"
+ssh_key="AWS-key-pair"
+local_ip_cidr="whatsmyip.org/32"
+region="us-east-1"
+zone="us-east-1b"
+wordpress_ami_id="ami-0677ddf29c157f648"
+server_name="Wordpress Server"
