@@ -24,14 +24,14 @@ resource "aws_security_group_rule" "ingress_https" {
 }
 
 # allow reply traffic from the internet to the server on ephemeral ports
-#resource "aws_security_group_rule" "ingress_reply" {
-#  security_group_id = aws_security_group.wordpress_security_group.id
-#  type              = "ingress"
-#  cidr_blocks       = ["0.0.0.0/0"]
-#  protocol          = "tcp"
-#  from_port         = 1024
-#  to_port           = 65535
-#}
+resource "aws_security_group_rule" "ingress_reply" {
+  security_group_id = aws_security_group.wordpress_security_group.id
+  type              = "ingress"
+  cidr_blocks       = ["0.0.0.0/0"]
+  protocol          = "tcp"
+  from_port         = 1024
+  to_port           = 65535
+}
 
 # allow http access on port 22 from our ip address
 resource "aws_security_group_rule" "ingress_ssh" {
@@ -44,12 +44,12 @@ resource "aws_security_group_rule" "ingress_ssh" {
 }
 
 # allow reply traffic from the server to the internet on ephemeral ports
-#resource "aws_security_group_rule" "egress_reply" {
-#  security_group_id = aws_security_group.wordpress_security_group.id
-#  type              = "egress"
-#  cidr_blocks       = ["0.0.0.0/0"]
-#  protocol          = "all"
-#  from_port         = 0
-#  to_port           = 0
-#}
+resource "aws_security_group_rule" "egress_reply" {
+  security_group_id = aws_security_group.wordpress_security_group.id
+  type              = "egress"
+  cidr_blocks       = ["0.0.0.0/0"]
+  protocol          = "all"
+  from_port         = 0
+  to_port           = 0
+}
 
